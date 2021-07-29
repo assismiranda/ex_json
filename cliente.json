@@ -1,0 +1,26 @@
+{
+    "clientId": 1,
+    "cadastro": "2021-02-22",
+    "nome": "Márcio",
+    "idade": 40,
+    "cidade": "Ouro Branco",
+    "estado": "MG",
+    "pets": [
+        {
+            "animal": "cachorro",
+            "nome": "Thor"
+        },
+        {
+            "animal": "gato",
+            "nome": "Félix"
+        },
+        {
+            "animal": "vaca",
+            "nome": "Estrela"
+        },
+        {
+            "animal": "targaruga",
+            "nome": "zuleica"
+        }
+    ]
+}

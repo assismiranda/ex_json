@@ -1,0 +1,17 @@
+{
+    "caixa1": {
+        "id": 1,
+        "latitude": "000245514",
+        "longitude": "45454545"
+    },
+    "caixa2": {
+        "id": 2,
+        "latitude": "551445121",
+        "longitude": "54545454"
+    },
+    "caixa3": {
+        "id": 3,
+        "latitude": "878545214",
+        "longitude": "87878878"
+    }
+}

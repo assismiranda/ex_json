@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ler arquivo Json</title>
+        <script type="text/javascript" src="data.json"></script>
+    </head>
+
+    <body>
+        <p id="demo"></p>
+        <script>
+            //pegando os dados do servidor
+            /*
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var myObj = JSON.parse(this.responseText);
+                    document.getElementById("demo").innerHTML = myObj.nome + "<br>" + myObj.idade + "<br>" + myObj.profissao;
+                }
+            };
+            xmlhttp.open("POST", "data.json", true);
+            xmlhttp.send();
+            */
+
+            //pegando os dados do servidor, a partir de um array
+            var string_dados = ""; //gera uma string vazia
+            var xmlhttp = new XMLHttpRequest(); //cria um objeto xmlhttp da classe XMLHttpRequest 
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) { //testa se a comunicação com o servidor está OK
+                    //converte uma string num objeto Json
+                    //para fazer o contrário, usa-se o método JSON.stringify(objeto)
+                    var myObj = JSON.parse(this.responseText);
+
+                    //foreach para ler o array gerado com o Json
+                    myObj.forEach(element => {
+                        string_dados += element.nome + "<br>" + element.idade + "<br>" + element.profissao;
+                        string_dados += "<br><br>";
+                    });
+
+                    //escreve no parágrafo os dados retornados do json
+                    document.getElementById("demo").innerHTML = string_dados;
+                }
+            };
+            //método open especifica o tipo de requisição com o servidor
+            xmlhttp.open("POST", "dataArrayJson.json", true);
+            //envia a requisição para o servidor
+            xmlhttp.send();
+        </script>
+    </body>
+
+</html>
